@@ -4,12 +4,6 @@ import java.io.*;
 
 public class DijkstraBus {
 
-    /**
-     * @param filename: A filename containing the details of the city road network
-     * @param sA, sB, sC: speeds for 3 contestants
-     * 
-    */
-
     double[][] routes; //2D array with all the routes 
     double[] timeTo;        //Distance for shortest known path to Stop
     boolean[] stopedAt;
@@ -64,30 +58,9 @@ public class DijkstraBus {
         {
             
         }
-        // PRINTING 2D Array////////////////////////////////////////////
-        /*
-        System.out.println("stops "+ nrStops);
-        System.out.println("Streets "+ nrStreets);
-
-        String twoDArray = "";
-        for(int i = 0 ; i < nrStops ; i++)
-        {
-            for(int j = 0 ; j < nrStops; j++)
-            {
-                twoDArray += routes[i][j];
-                twoDArray += " ";
-            }
-            twoDArray += "\n";
-        }
-        System.out.println(twoDArray);
-        */
-        //PRINTING 2D Array********************************************** END
+        
     }
 
-    /**
-    * @return int: minimum minutes that will pass before the three contestants can meet
-     */
-    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     public int timeRequiredforCompetition()
     {
         if(nrStops < 3) return -1;
@@ -145,8 +118,7 @@ public class DijkstraBus {
         {
             if(timeTo[i] > maxDistance) maxDistance = timeTo[i];
             if(stopedAt[i] == false) return -1;
-        
-            //System.out.println(timeTo[i]);
+
         }
         return maxDistance;
     }
