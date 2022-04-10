@@ -24,9 +24,13 @@ public class MainBusProgram {
 
     public String theTimeOfBus(ArrayList<String> stringList)
     {
-        return stringList.get(5);
-
-        return ("No Time Found");
+        if (stringList.get(5) != null)
+        {
+            return stringList.get(5);
+        }
+        else{
+            return "No Time Found";
+        }
     }
 
 }
